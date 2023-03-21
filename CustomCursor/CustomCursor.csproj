@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<LangVersion>latest</LangVersion>
+		<DebugType>embedded</DebugType>
+		<Version>0.1.0</Version>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="SpiderHeck.GameLibs" Version="1.0.0-r.0" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<GameVersion>1.0.0-r.0</GameVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="SpiderHeck.GameLibs" Version="$(GameVersion)" PrivateAssets="all" />
+		<PackageReference Include="UnityEngine.Modules" Version="2020.3.13">
+		  <PrivateAssets>all</PrivateAssets>
+		  <IncludeAssets></IncludeAssets>
+		</PackageReference>
+		<Reference Include="0Harmony">
+			<HintPath>..\References\0Harmony.dll</HintPath>
+		</Reference>
+		<Reference Include="BepInEx.Core">
+			<HintPath>..\References\BepInEx.Core.dll</HintPath>
+		</Reference>
+		<Reference Include="BepInEx.Unity">
+			<HintPath>..\References\BepInEx.Unity.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="SampleShapes\cursor.png">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </None>
+	  <None Update="SampleShapes\SampleShapes.xcf">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </None>
+	</ItemGroup>
+
+	<Target Name="Copy" AfterTargets="Build" Condition="'$(SpiderHeck)' != ''">
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(SpiderHeck)\BepInEx\plugins\CustomCursor" UseSymboliclinksIfPossible="true" />
+		
+		<Copy SourceFiles="$(TargetDir)\SampleShapes\cursor.png" DestinationFolder="$(SpiderHeck)\BepInEx\plugins\CustomCursor" UseSymboliclinksIfPossible="true" />
+	</Target>
+
+</Project>

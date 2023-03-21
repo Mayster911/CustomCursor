@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomCursor", "CustomCursor\CustomCursor.csproj", "{A6681E0E-F881-43EB-9030-59FB32ED8637}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6681E0E-F881-43EB-9030-59FB32ED8637}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6681E0E-F881-43EB-9030-59FB32ED8637}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2BAD0354-2EF7-4E0C-80D8-528D51F4C333}
+	EndGlobalSection
+EndGlobal
